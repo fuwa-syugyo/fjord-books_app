@@ -1,0 +1,33 @@
+ja:
+  hello: "こんにちは"
+  Hello_Flash: "こんにちわああああああああああ"
+  Title: "タイトル"
+  Memo: "メモ"
+  Author: "著者"
+  Picture: "画像"
+  Show: "詳細"
+  Edit: "編集"
+  Destroy: "削除"
+  New Book: "新規作成"
+  Back: "戻る"
+  Update Book: "本を更新"
+  Create Book: "本を追加"
+  Book was successfully created: "本を追加しました！"
+  Are you sure?: "本当に削除しますか？"
+  Editing Book: "編集"
+  Books: "一覧"
+  Book was successfully updated: "本の情報を更新しました！"
+  Book was successfully destroyed: "本を削除しました"
+
+  activerecord:
+    attributes:
+      book:
+        title: "タイトル"
+        memo: "メモ"
+        author: "著者"
+        picture: "画像"
+  helpers:
+    submit:
+      create: "登録する"
+      update: "更新する"
+

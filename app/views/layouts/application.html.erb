@@ -11,5 +11,7 @@
 
   <body>
     <%= yield %>
+    <%= debug(params) if Rails.env.develompent? %>
+    <br />
   </body>
 </html>

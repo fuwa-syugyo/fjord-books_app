@@ -34,11 +34,9 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: t('Book was successfully created.') }
-        format.json { render :show, status: :created, location: @book }
+        format.html { redirect_to @book, notice: t('.book_was_successfully_created', Model: '本') }
       else
         format.html { render :new }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -48,11 +46,9 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to @book, notice: t('Book was successfully updated.') }
-        format.json { render :show, status: :ok, location: @book }
+        format.html { redirect_to @book, notice: t('.book_was_successfully_updated', Model: '本') }
       else
         format.html { render :edit }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,8 +58,7 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     respond_to do |format|
-      format.html { redirect_to books_url, notice: t('Book was successfully destroyed.') }
-      format.json { head :no_content }
+      format.html { redirect_to books_url, notice: t('.book_was_successfully_destroyed', Model: '本') }
     end
   end
 

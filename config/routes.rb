@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|ja/ do
+    get '/:locale' => 'books#index'
     resources :books
   end
-
-  get '/:locale' => 'books#index'
 end

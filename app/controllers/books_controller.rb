@@ -47,7 +47,7 @@ class BooksController < ApplicationController
   # DELETE /books/1.json
   def destroy
     @book.destroy
-      redirect_to books_url, notice: t('book_was_successfully_destroyed', Model: t('book'))
+    redirect_to books_url, notice: t('book_was_successfully_destroyed', Model: t('book'))
   end
 
   private

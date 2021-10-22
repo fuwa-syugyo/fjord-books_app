@@ -6,7 +6,8 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.all.order(:created_at, :id)
+    @books = @books.page(params[:page])
   end
 
   # GET /books/1

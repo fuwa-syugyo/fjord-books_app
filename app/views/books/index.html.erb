@@ -25,6 +25,7 @@
         <td><%= link_to t('views.common.destroy'), book, method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
       </tr>
     <% end %>
+    <%= paginate (@books) %>
   </tbody>
 </table>
 

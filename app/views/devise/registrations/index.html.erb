@@ -20,16 +20,10 @@
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
         <td><%= user.self_introduction %></td>
-        <td><%#= link_to t('views.common.show'), user %></td>
-        <td><%= link_to t('views.common.show'), user %></td>
-        <td><%= link_to t('views.common.destroy'), user_registration_path, method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
+        <td><%= link_to t(:show), user %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <%= paginate @users %>
-
-<br>
-
-<%#= link_to t('views.common.new'), new_user_path %>

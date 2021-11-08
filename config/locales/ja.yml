@@ -29,14 +29,58 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      models:
+        User: ユーザー 
+  Edit_title: "%{name}編集"
   minimum_password_length: ※最低%{minimum}文字
   Are_you_sure?: 本当によろしいですか？
   Update: 更新
+  (leave_blank_if_you_don't_want_to_change_it): (変更したくない場合は空欄のままで大丈夫です)
+  (we_need_your_current_password_to_confirm_your_changes): (変更を確認するために現在のパスワードが必要です)
+  Unhappy?: お気に召しませんでしたか？
+  Cancel_my_account: アカウント削除
+  Sign_up: アカウント登録
+  Login: ログイン
+  Edit_profile: プロフィール編集
+  User_index: ユーザー一覧
+  Logout: ログアウト
+  Show: 詳細
+  Edit: 編集
+  Destroy: 削除
+  views.common.show: 詳細
+  Back: 戻る
+  logged_in_as: "%{login_email} ログイン中"
+  show: 詳細
+  edit: 編集
+  destroy: 削除
+  Book_index: 本一覧
+  new: 新規作成
+  Log_in: ログイン
+  Forgot_your_password?: パスワードを忘れましたか？
+  Send_me_reset_password_instructions: パスワード変更用メールを送信
+  Didn't_receive_confirmation_instructions?: パスワード変更用メールが届きませんでしたか？
+  Didn't_receive_unlock_instructions?: ロック解除のメールが届きませんでしたか？
+  controllers.common.notice_create: "%{name}を作成"
+  controllers.common.notice_update: "%{name}を更新"
+  controllers.common.notice_destroy: "%{name}を削除"
+  title_new: 本の新規作成
+  title_edit: "%{name}編集"
   helpers:
     submit:
       Cancel_my_account: アカウントを削除する
+      create: 登録する
+      update: 更新する
+
     models:
       user: ユーザー
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: ""
+          one: "<strong>1-1</strong>/1件中"
+          other: "<strong>1-%{count}</strong>/%{count}件中"
+      more_pages:
+        display_entries: "<strong>%{first}-%{last}</strong>/%{total}件中"
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
@@ -92,7 +136,7 @@ ja:
         confirm_new_password: 確認用新しいパスワード
         new_password: 新しいパスワード
       new:
-        forgot_your_password: パスワードを忘れましたか？
+        forgot_your_password?: パスワードを忘れましたか？
         send_me_reset_password_instructions: パスワードの再設定方法を送信する
       no_token: このページにはアクセスできません。パスワード再設定メールのリンクからアクセスされた場合には、URL をご確認ください。
       send_instructions: パスワードの再設定について数分以内にメールでご連絡いたします。
@@ -151,8 +195,11 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
-  (leave_blank_if_you_don't_want_to_change_it): (変更したくない場合は空欄のままで大丈夫です)
-  (we_need_your_current_password_to_confirm_your_changes): (変更を確認するために現在のパスワードが必要です)
-  Unhappy?: お気に召しませんでしたか？
-  Cancel_my_account: アカウント削除
-  Back: 戻る
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
+ 

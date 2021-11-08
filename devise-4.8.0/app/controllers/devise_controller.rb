@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+before_action :authenticate_user!
 
 # All Devise controllers are inherited from here.
 class DeviseController < Devise.parent_controller.constantize

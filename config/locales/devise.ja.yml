@@ -9,6 +9,16 @@ ja:
 #      already_confirmed: "was already confirmed"
       not_locked: "は凍結されていません"
 #      not_locked: "was not locked"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: "が空になっています"
+              too_short: "が短すぎます"
+            email:
+              blank: "が空になっています"
 
   devise:
     failure:

@@ -29,8 +29,6 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
-      models:
-        User: ユーザー 
   Edit_title: "%{name}編集"
   minimum_password_length: ※最低%{minimum}文字
   Are_you_sure?: 本当によろしいですか？
@@ -65,6 +63,10 @@ ja:
   controllers.common.notice_destroy: "%{name}を削除"
   title_new: 本の新規作成
   title_edit: "%{name}編集"
+  Change_your_password: パスワード変更
+  New_password: 新しいパスワード
+  Confirm_new_password: 新しいパスワード(確認)
+  Change_my_password: パスワード変更
   helpers:
     submit:
       Cancel_my_account: アカウントを削除する
@@ -195,6 +197,12 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+    models:
+      user:
+        attributes:
+          password:
+            blank: "が空になっています"
+            too_short: "が短すぎます"
   views:
     pagination:
       first: "&laquo; 最初"

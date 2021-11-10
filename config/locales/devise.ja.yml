@@ -19,6 +19,16 @@ ja:
               too_short: "が短すぎます"
             email:
               blank: "が空になっています"
+            password_confirmation:
+              confirmation: "が一致していません"
+            current_password:
+              invalid: "が違います"
+              blank: "が空になっています"
+  controllers:
+    common:
+      notice_destroy: 削除しました
+      notice_create: 登録しました
+      notice_update: 更新しました
 
   devise:
     failure:

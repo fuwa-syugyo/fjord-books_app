@@ -3,26 +3,27 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  before_action :authenticate_scope!, except: [:new, :create]
-  
+  before_action :authenticate_scope!, except: %i[new create]
+
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
+
   def index
     @users = User.order(:id).page(params[:page])
     render :index
   end
 
   def show
-    @user = User.find(params[:id]) 
+    @user = User.find(params[:id])
     render :show
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+  end
 
   # GET /resource/edit
   # def edit

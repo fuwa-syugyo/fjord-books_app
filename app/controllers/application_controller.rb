@@ -7,19 +7,20 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys: [:postal_code, :address, :self_introduction])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[postal_code address self_introduction])
   end
 
- private 
- def after_sign_in_path_for(resource)
+  private
+
+  def after_sign_in_path_for(_resource)
     books_path # ログイン後に遷移するpathを設定
- end
+  end
 
- def after_sign_out_path_for(resource)
-   new_user_session_path # ログアウト後に遷移するpathを設定
- end
+  def after_sign_out_path_for(_resource)
+    new_user_session_path # ログアウト後に遷移するpathを設定
+  end
 
- def after_update_path_for(resource)
-  edit_user_registration_path # アカウント情報更新後に遷移するpathを設定
-end
+  def after_update_path_for(_resource)
+    edit_user_registration_path # アカウント情報更新後に遷移するpathを設定
+  end
 end

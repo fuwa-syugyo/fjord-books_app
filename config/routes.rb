@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users', to: 'users/registrations#index'
     get 'users/:id', to: 'users/registrations#show'
-    get 'users/:id/edit', to: 'users/registrations#edit'
+    get 'users/edit', to: 'users/registrations#edit'
   end 
 
   resources :books

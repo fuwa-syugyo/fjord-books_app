@@ -30,12 +30,8 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
   Edit_title: "%{name}編集"
-  minimum_password_length: ※最低%{minimum}文字
   Are_you_sure?: 本当によろしいですか？
   Update: 更新
-  (leave_blank_if_you_don't_want_to_change_it): (変更したくない場合は空欄のままで大丈夫です)
-  (we_need_your_current_password_to_confirm_your_changes): (変更を確認するために現在のパスワードが必要です)
-  Unhappy?: お気に召しませんでしたか？
   Cancel_my_account: アカウント削除
   Sign_up: アカウント登録
   Login: ログイン
@@ -54,13 +50,6 @@ ja:
   Book_index: 本一覧
   new: 新規作成
   Log_in: ログイン
-  Forgot_your_password?: パスワードを忘れましたか？
-  Send_me_reset_password_instructions: パスワード変更用メールを送信
-  Didn't_receive_confirmation_instructions?: パスワード変更用メールが届きませんでしたか？
-  Didn't_receive_unlock_instructions?: ロック解除のメールが届きませんでしたか？
-  controllers.common.notice_create: "%{name}を作成"
-  controllers.common.notice_update: "%{name}を更新"
-  controllers.common.notice_destroy: "%{name}を削除"
   title_new: 本の新規作成
   title_edit: "%{name}編集"
   Change_your_password: パスワード変更
@@ -72,7 +61,6 @@ ja:
       Cancel_my_account: アカウントを削除する
       create: 登録する
       update: 更新する
-
     models:
       user: ユーザー
     page_entries_info:
@@ -210,4 +198,5 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "..."
+ 
  

@@ -27,11 +27,8 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      # format.html { redirect_to @book, notice: t('controllers.common.notice_create', name: Book.model_name.human) }
       redirect_to @book, notice: t('controllers.common.notice_create', name: Book.model_name.human)
-      # format.json { render :show, status: :created, location: @book }
     else
-      # format.html { render :new }
       render :new
     end
   end

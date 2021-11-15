@@ -14,11 +14,15 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <%  if user.avatar.attached? %>
+          <td><%=  image_tag user.avatar %></td>
+        <% end %>
         <td><%= user.email %></td>
         <td><%= user.name %></td>
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
         <td><%= link_to t('views.common.show'), user %></td>
+        <td><%= user.avatar.attached? %></td>
       </tr>
     <% end %>
   </tbody>

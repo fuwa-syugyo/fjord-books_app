@@ -30,7 +30,7 @@
   <%# @user.avatar.attach(params[:avatar]) %>
   <% if @user.avatar.attached? %>
     <%#= image_tag @user.avatar.variant(resize: "100x100") %>
-    <%= image_tag @user.avatar.variant(resize: "10x10") %>
+    <%= image_tag @user.avatar.variant(resize: "100x100") %>
   <% end %>
   <%# = @user.avatar.attach(params[:avatar]) %>
 </p>

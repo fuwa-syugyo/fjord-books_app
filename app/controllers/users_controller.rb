@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    # arams.fetch(:user, {}).permit(:name, :postal_code, :address, :self_introduction, :avatar)
     params.require(:user).permit(:name, :postal_code, :address, :self_introduction, :avatar)
   end
 end

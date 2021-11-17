@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th><%= User.human_attribute_name(:avatar) %></th>
       <th><%= User.human_attribute_name(:email) %></th>
       <th><%= User.human_attribute_name(:name) %></th>
       <th><%= User.human_attribute_name(:postal_code) %></th>
@@ -15,14 +16,15 @@
     <% @users.each do |user| %>
       <tr>
         <%  if user.avatar.attached? %>
-          <td><%=  image_tag user.avatar %></td>
+          <td><%=  image_tag user.avatar.variant(resize: "50x50")  %></td>
+        <% else %>
+          <td><%=  %></td>
         <% end %>
         <td><%= user.email %></td>
         <td><%= user.name %></td>
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
         <td><%= link_to t('views.common.show'), user %></td>
-        <td><%= user.avatar.attached? %></td>
       </tr>
     <% end %>
   </tbody>

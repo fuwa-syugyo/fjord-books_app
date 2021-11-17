@@ -27,12 +27,9 @@
 
 <p>
   <strong><%= User.human_attribute_name(:avatar) %>:</strong>
-  <%# @user.avatar.attach(params[:avatar]) %>
   <% if @user.avatar.attached? %>
-    <%#= image_tag @user.avatar.variant(resize: "100x100") %>
     <%= image_tag @user.avatar.variant(resize: "100x100") %>
   <% end %>
-  <%# = @user.avatar.attach(params[:avatar]) %>
 </p>
 
 <% if current_user == @user %>

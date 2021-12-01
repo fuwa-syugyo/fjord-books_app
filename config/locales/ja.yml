@@ -205,3 +205,7 @@ ja:
       show: "詳細"
       edit: "編集"
       new: "新規作成"
+      title_edit: "%{name}編集"
+      destroy: "削除"
+      delete_confirm: "削除してもよろしいですか？"
+      title_new: "%{name}追加"

@@ -20,7 +20,7 @@
         <td><%= book.picture %></td>
         <td><%= link_to t(:show), book %></td>
         <td><%= link_to t(:edit), edit_book_path(book) %></td>
-        <td><%= link_to t(:destroy), book, method: :delete, data: { confirm: t('Are_you_sure?') } %></td>
+        <td><%= link_to t(:destroy), book, method: :delete, data: { confirm: t('are_you_sure?') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to t(:new), new_book_path %>
+<%= link_to t('views.common.new'), new_book_path %>

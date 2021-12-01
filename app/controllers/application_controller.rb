@@ -19,8 +19,4 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(_resource)
     new_user_session_path # ログアウト後に遷移するpathを設定
   end
-
-  def after_update_path_for(_resource)
-    edit_user_registration_path # アカウント情報更新後に遷移するpathを設定
-  end
 end

@@ -3,28 +3,14 @@ ja:
   activerecord:
     attributes:
       user:
-        confirmation_sent_at: パスワード確認送信時刻
-        confirmation_token: パスワード確認用トークン
-        confirmed_at: パスワード確認時刻
         created_at: 作成日
         current_password: 現在のパスワード
-        current_sign_in_at: 現在のログイン時刻
-        current_sign_in_ip: 現在のログインIPアドレス
         email: Eメール
         postal_code: 郵便番号
         address: 住所
         self_introduction: 自己紹介
-        encrypted_password: 暗号化パスワード
-        failed_attempts: 失敗したログイン試行回数
-        last_sign_in_at: 最終ログイン時刻
-        last_sign_in_ip: 最終ログインIPアドレス
-        locked_at: ロック時刻
         password: パスワード
         password_confirmation: パスワード（確認用）
-        remember_created_at: ログイン記憶時刻
-        remember_me: ログインを記憶する
-        reset_password_sent_at: パスワードリセット送信時刻
-        reset_password_token: パスワードリセット用トークン
     errors:
       models:
         user:
@@ -36,6 +22,7 @@ ja:
               confirmation: "がパスワードと一致していません"
             password: 
               too_short: "が短すぎます"
+              blank: "が空欄です"
             current_password:
               blank: "が空欄です"
               invalid: "が違います"
@@ -54,30 +41,20 @@ ja:
       notice_create: "新規作成しました"
       notice_update: "本の情報を更新しました"
       notice_destroy: "本を削除しました"
-  edit_title: "%{name}編集"
-  are_you_sure?: 本当によろしいですか？
-  update: 更新
-  cancel_my_account: アカウント削除
+  # edit_title: "%{name}編集"
   sign_up: アカウント登録
-  login: ログイン
   edit_profile: プロフィール編集
   user_index: ユーザー一覧
   logout: ログアウト
   show: 詳細
-  edit: 編集
   destroy: 削除
-  views.common.show: 詳細
-  back: 戻る
   logged_in_as: "%{login_email} ログイン中"
   book_index: 本一覧
   new: 新規作成
   log_in: ログイン
-  title_new: 本の新規作成
-  title_edit: "%{name}編集"
-  change_your_password: パスワード変更
-  new_password: 新しいパスワード
-  confirm_new_password: 新しいパスワード(確認)
-  change_my_password: パスワード変更
+  # title_new: 本の新規作成
+  # title_edit: "%{name}編集"
+  # new_password: 新しいパスワード
   helpers:
     submit:
       Cancel_my_account: アカウントを削除する

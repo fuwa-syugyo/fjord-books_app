@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def validate_icon
-    return unless avatar.attached?
+    return unless avatar.image?
 
     unless validate_extension
       avatar = nil

@@ -14,13 +14,13 @@ class User < ApplicationRecord
                                   foreign_key: 'followed_id',
                                   dependent: :destroy,
                                   inverse_of: :followed
-  has_many :following, through: :active_user_follows, source: :followed
+  has_many :followings, through: :active_user_follows, source: :followed
   has_many :followers, through: :passive_user_follows, source: :follower
 
   paginates_per 10
 
   def follow(other_user)
-    following << other_user
+    followings << other_user
   end
 
   def unfollow(other_user)
@@ -28,6 +28,6 @@ class User < ApplicationRecord
   end
 
   def following?(other_user)
-    following.include?(other_user)
+    followings.include?(other_user)
   end
 end

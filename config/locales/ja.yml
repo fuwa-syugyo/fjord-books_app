@@ -218,6 +218,14 @@ ja:
       title_show: "%{name}の詳細"
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
+      new_report: 日報作成
+      new_comment: コメント投稿
+      comment: コメント一覧
+      title: タイトル
+      body: 本文
+      author: 作成者
+      time: 投稿日時
+      edit_comment: コメント編集
     pagination:
       first: '最初'
       last: '最後'
@@ -255,3 +263,14 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  reports: 
+    common: 
+      show: 詳細
+      edit: 編集
+      destroy: 削除
+
+  comments:
+    show:
+      comment: コメント
+      user: ユーザー
+      body: 本文

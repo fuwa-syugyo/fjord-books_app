@@ -2,4 +2,5 @@
 
 class Book < ApplicationRecord
   mount_uploader :picture, PictureUploader
+  include Commentable
 end

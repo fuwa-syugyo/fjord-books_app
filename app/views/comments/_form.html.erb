@@ -1,22 +1,9 @@
-<%= form_with(model: [@report, @comment]) do |form| %>
-  <% if comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-      <ul>
-        <% comment.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+<%= form_with(model: [commentable, Comment.new] ) do |form| %>
+  <div class="form-group">
+    <%= form.text_area :body, required: true, class: "form-control", placeholder: t('views.common.add_a_comment') %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -220,12 +220,15 @@ ja:
       minimum_length: "%{length}文字以上"
       new_report: 日報作成
       new_comment: コメント投稿
-      comment: コメント一覧
+      comments: コメント一覧
+      comment: コメント
       title: タイトル
       body: 本文
       author: 作成者
       time: 投稿日時
       edit_comment: コメント編集
+      add_a_comment: コメントを入力
+      your_comment_was_successfully_posted: コメントが投稿されました
     pagination:
       first: '最初'
       last: '最後'
@@ -253,6 +256,8 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      notice_not_destroy: "%{name}を削除できませんでした。"
+      notice_not_edit: "%{name}を編集できませんでした。"
   relationships:
     create:
       notice: "フォローしました。"
@@ -268,7 +273,6 @@ ja:
       show: 詳細
       edit: 編集
       destroy: 削除
-
   comments:
     show:
       comment: コメント

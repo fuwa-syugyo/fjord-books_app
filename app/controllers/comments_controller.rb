@@ -10,8 +10,6 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @report = Report.find(params[:report_id])
-    @book = Book.find(params[:book_id])
     @comment = Comment.new
   end
 
@@ -24,12 +22,6 @@ class CommentsController < ApplicationController
   end
 
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_commentable
-    resource, id = request.path.split('/')[1, 2]
-    @commentable = resource.singularize.classify.constantize.find(id)
-  end
 
   # Only allow a list of trusted parameters through.
   def comment_params

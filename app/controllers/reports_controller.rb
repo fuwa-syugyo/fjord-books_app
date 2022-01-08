@@ -19,7 +19,9 @@ class ReportsController < ApplicationController
   end
 
   # GET /reports/1/edit
-  def edit; end
+  def edit
+    raise SecurityError, 'SecurityErrorを発生させました' if @report.user_id != current_user.id
+  end
 
   # POST /reports or /reports.json
   def create
@@ -28,27 +30,24 @@ class ReportsController < ApplicationController
     if @report.save
       redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
     else
-      ender :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /reports/1 or /reports/1.json
   def update
-    if @report.user_id == current_user.id && @report.update(report_params)
-      redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
-    else
-      redirect_to edit_report_path, notice: t('controllers.common.notice_not_edit', name: Report.model_name.human)
-    end
+    return raise SecurityError, 'SecurityErrorを発生させました' if @report.user_id != current_user.id
+    return redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human) if @report.update(report_params)
+
+    redirect_to edit_report_path, notice: t('controllers.common.notice_not_edit', name: Report.model_name.human)
   end
 
   # DELETE /reports/1 or /reports/1.json
   def destroy
-    if @report.user_id == current_user.id
-      @report.destroy
-      redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
-    else
-      redirect_to reports_url, notice: t('controllers.common.notice_not_destroy', name: Report.model_name.human)
-    end
+    return raise SecurityError, 'SecurityErrorを発生させました' if @report.user_id != current_user.id
+
+    @report.destroy!
+    redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
 
   private

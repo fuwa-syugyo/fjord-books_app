@@ -1,0 +1,18 @@
+<h1><%= t('views.common.title_show', name: Report.model_name.human) %></h1>
+
+<p>
+  <strong><%= t('views.common.title') %> :</strong>
+  <%= @report.title %>
+</p>
+
+<p>
+  <strong><%= t('views.common.body') %> :</strong>
+  <%= @report.body %>
+</p>
+
+<%= render partial: "comments/comments", locals: {commentable: @report} %>
+<%= render partial: "comments/form", locals: {commentable: @report} %>
+<% if @report.user_id == current_user.id %>
+  <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+<% end %>
+<%= link_to t('views.common.back'), reports_path %>

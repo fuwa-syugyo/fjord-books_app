@@ -1,0 +1,18 @@
+<% commentable.comments.each do |comment| %>
+  <div class="well">
+    <% if User.find(comment.user_id).name.present? %>
+      <% author = User.find(comment.user_id).name %>
+    <% else %>
+      <% author = User.find(comment.user_id).email %>
+    <% end %>
+    <strong><%= t('views.common.author') %> :</strong>
+    <%= author %>
+    </br>
+    <strong><%= t('views.common.time') %> :</strong>
+    <%= l comment.created_at, format: :long %>
+    </br>
+    <strong><%= t('views.common.comment') %> :</strong>
+    <%= comment.body %>
+  </div>
+  </br>
+<% end %>

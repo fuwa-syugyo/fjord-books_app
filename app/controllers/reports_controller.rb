@@ -27,9 +27,7 @@ class ReportsController < ApplicationController
   def create
     @report = Report.new(report_params)
     @report.user_id = current_user.id
-    if @report.save!
-      redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
-    end
+    redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human) if @report.save!
   end
 
   # PATCH/PUT /reports/1 or /reports/1.json

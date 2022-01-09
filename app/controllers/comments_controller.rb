@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new comment_params
     @comment.user = current_user
-    @comment.save
+    @comment.save!
     redirect_to @commentable, notice: t('views.common.your_comment_was_successfully_posted')
   end
 

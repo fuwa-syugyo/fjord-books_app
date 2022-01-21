@@ -12,4 +12,9 @@ class ReportTest < ActiveSupport::TestCase
     user = users(:bob)
     assert_equal false, report.editable?(user)
   end
+
+  test 'created_on' do
+    report = reports(:test_report)
+    assert_equal '2022/01/05', I18n.localize(report.created_on)
+  end
 end

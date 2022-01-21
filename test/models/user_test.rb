@@ -12,12 +12,27 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test '#follow' do
-    me = User.create!(email: 'me@example.com', password: 'password')
-    she = User.create!(email: 'she@example.com', password: 'password')
+    me = users(:bob)
+    she = users(:alice)
 
-    assert_not me.following?(she)
+    me.follow(she)
+    assert_equal true, Relationship.where(following_id: 100, follower_id: 101).exists?
+  end
+
+  test '#following?' do
+    me = users(:bob)
+    she = users(:alice)
+
     me.follow(she)
     assert me.following?(she)
+  end
+
+  test '#followed_by?' do
+    me = users(:bob)
+    she = users(:alice)
+
+    me.follow(she)
+    assert she.followed_by?(me)
   end
 
   test '#unfollow' do
